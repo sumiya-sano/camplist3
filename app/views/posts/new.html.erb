@@ -1,0 +1,39 @@
+<h1>新規投稿</h1>
+<%= form_for @post do |f| %>
+    <div class = "field">
+
+        <div class="img">
+            <%= f.label :image %>
+            <%= f.file_field :image %>
+        </div>
+
+        <%= f.label :"title" %>
+        <%= f.text_field :title, :size =>  "50x10" %><br>
+        <%= f.label :"number" %>
+        <%= f.text_field :number, :size => "15x10"  %>
+        <%= f.label :"price" %>
+        <%= f.text_field :price, :size => "15x10"  %><br>
+
+        <div class="tags">
+            <%= f.label :tag_list %>
+            <%= text_field_tag 'post[tag_list]', @post.tag_list.join(",") %>
+        </div>
+        
+        <%= f.label :"about" %>
+        <%= f.text_area :about, :size => "50x10"  %><br>
+        <%= f.label :"tent" %>
+        <%= f.text_field :tent, :size =>  "50x10" %><br>
+        <%= f.label :"sleeping tool" %>
+        <%= f.text_field :sleep, :size =>  "50x10" %><br>
+        <%= f.label :"lanthanum" %>
+        <%= f.text_field :lantan, :size =>  "50x10" %><br>
+        <%= f.label :"cooking tool" %>
+        <%= f.text_field :cook, :size =>  "50x10" %><br>
+        <%= f.label :other %>
+        <%= f.text_field :other, :size =>  "50x10" %><br>
+        <%= f.label :"advice" %>
+        <%= f.text_area :advice, :size => "50x10"  %>
+    </div>
+
+    <%= f.submit "投稿" %>
+<% end %>

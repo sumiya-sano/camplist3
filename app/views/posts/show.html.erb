@@ -1,0 +1,57 @@
+<h3>投稿詳細</h3>
+<div class = "post">
+    <%= image_tag @post.image_url, class:"post-image" if @post.image? %>
+    <%= @post.title %>
+    <%= @post.user.name %>
+    <%= @post.number %>
+    <%= @post.price %>
+    <%= @post.about %>
+    <%= @post.tent %>
+    <%= @post.sleep %>
+    <%= @post.lantan %>
+    <%= @post.cook %>
+    <%= @post.other %>
+    <%= @post.advice %>
+    <%= @post.created_at %>
+
+    <% if current_user.already_liked?(@post) %>
+        <%= link_to post_like_path(@post), method: :delete do %>
+            <i class="fas fa-heart"></i><%= @post.likes.count %>
+        <% end %>
+    <% else %>
+        <%= link_to post_likes_path(@post), method: :post do %>
+           <i class="far fa-heart"></i><%= @post.likes.count %>
+        <% end %>
+    <% end %>
+ </div>
+
+<h2>いいねしたユーザー</h2>
+<% @post.liked_users.each do |user| %>
+  <li><%= user.name %></li>
+<% end %>
+
+<div class = "comment-wrapper">
+    <p>コメント一覧</p>
+    <% @comments.each do |c| %>
+        <div>
+            <%= c.user.name unless c.user.blank? %>
+            <br>
+            <%= c.comment %>
+        </div>
+            <br>
+    <% end %>
+
+    <% if user_signed_in? %>
+        <%= form_with(model: [@post, @comment], local: true) do |p| %>
+        <%= p.text_area :comment %>
+        <%= button_tag type: "submit" do %>
+            <li class="far fa-comments"></li>コメントする
+        <% end %>
+    <% end %>
+    <% end %>
+</div>
+
+<% if user_signed_in? && current_user.id == @post.user_id %>
+    <%= link_to "edit", edit_post_path(@post.id) %>
+    <%= button_to "delete", post_path(@post.id), method: :delete %>
+<% end %> 
