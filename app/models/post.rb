@@ -1,4 +1,11 @@
 class Post < ApplicationRecord
+
+    [:title,
+        #  :tent, :sleep, :lantan, :cook, :other, :advice, :number, :price, :about, :image, :tag_list
+        ].each do |v|
+        validates v, presence: true
+    end
+
     belongs_to :user
 
     acts_as_taggable
