@@ -17,6 +17,7 @@
         <div class="tags">
             <%= f.label :tag_list %>
             <%= text_field_tag 'post[tag_list]', @post.tag_list.join(",") %>
+            <p>※タグを複数つける場合は,(カンマ)で区切ってください。</p>
         </div>
         
         <%= f.label :"about" %>
