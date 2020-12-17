@@ -1,0 +1,118 @@
+.show {
+    color: cornsilk;
+    display: grid;
+    place-items: center;
+
+    a {
+        color: cornsilk;
+    }
+
+    button {
+        background-color: transparent !important;
+        border: transparent;
+        box-shadow: 0 0 0 0 cornsilk!important;
+    }
+
+    .show-post {
+        h3 {
+            margin-left: -90px;
+            font-family: "CooperFiveOpti-Black"
+        }
+
+        .show-card {
+            background-color: transparent;
+
+            .card-img-top {
+                width: 700px;
+                margin-left: -100px;
+                border: 5px cornsilk inset;
+                border-radius: 30px;
+                box-shadow: 0 0 0 3px cornsilk;
+            }
+
+            .card-body {
+                background-image: url(joshua-bartell-6vvIBTvL90A-unsplash.jpg);
+                background-size: 100% auto;
+                margin-top: 30px;
+                border: 5px cornsilk inset;
+                border-radius: 30px;
+                box-shadow: 0 0 0 3px cornsilk;
+
+                .dropdown {
+                    .dropdown-toggle {
+                        border: cornsilk solid 2px;
+                    }
+
+                    .dropdown-menu {
+                        background-image: url(joshua-bartell-6vvIBTvL90A-unsplash.jpg);
+                        background-size: 100% auto;
+                        color: cornsilk;
+
+                        .dropdown-item {
+                            color: cornsilk;
+                        }
+                    }
+                }
+            }
+        }
+
+        .icon-button {
+            margin-top: 10px;
+            float: left;
+
+            .btn-primary {
+                background-image: url(joshua-bartell-6vvIBTvL90A-unsplash.jpg);
+                background-size: 100% auto;
+                border: cornsilk solid 1px;
+                padding: 0 10px;
+            }
+
+            .modal {
+                z-index: 9999;
+
+                .modal-header,
+                .modal-body,
+                .modal-footer {
+                    background-image: url(joshua-bartell-6vvIBTvL90A-unsplash.jpg);
+                    background-size: 100% auto;
+                }
+            }
+        }
+
+        .bi-brush {
+            margin-left: 220px;
+        }
+
+        .bi-trash {
+            margin-left: 20px;
+        }
+
+        .bi-brush,
+        .bi-trash {
+            margin-top: 15px;
+        }
+    }
+
+    .comment-wrapper {
+        background-image: url(joshua-bartell-6vvIBTvL90A-unsplash.jpg);
+        background-size: 100% auto;
+        padding: 5px;
+        margin-top: 30px;
+        margin-bottom: 100px;
+        border: cornsilk solid 1px;
+        width: 30rem;
+        border-radius: .25rem;
+
+        .comment-list {
+            border-bottom: 1px solid #999;
+        }
+
+        .comment-area {
+            margin-left: 5px;
+
+            .bi-chat-text {
+                margin-bottom: 15px;
+            }
+        }
+    }
+}

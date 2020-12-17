@@ -1,40 +1,33 @@
-<h1>新規投稿</h1>
-<%= form_for @post do |f| %>
-    <div class = "field">
-
-        <div class="img">
-            <%= f.label :image %>
-            <%= f.file_field :image %>
-        </div>
-
-        <%= f.label :"title" %>
+<div class="new">
+    <h3 class="title">New Post</h3>
+    <div class="field">
+        <%= form_for @post do |f| %>
+        <%= f.label :image %><br>
+        <%= f.file_field :image %><br>
+        <%= f.label :"title" %><br>
         <%= f.text_field :title, :size =>  "50x10" %><br>
         <%= f.label :"number" %>
-        <%= f.text_field :number, :size => "15x10"  %>
+        <%= f.text_field :number, :size => "15x10"%>人
         <%= f.label :"price" %>
-        <%= f.text_field :price, :size => "15x10"  %><br>
-
-        <div class="tags">
-            <%= f.label :tag_list %>
-            <%= text_field_tag 'post[tag_list]', @post.tag_list.join(",") %>
-            <p>※タグを複数つける場合は,(カンマ)で区切ってください。</p>
-        </div>
-        
-        <%= f.label :"about" %>
+        <%= f.text_field :price, :size => "15x10"%>yen<br>
+        <%= f.label :tag_list %><br>
+        <%= text_field_tag 'post[tag_list]', @post.tag_list.join("") %>
+        <br>※タグを複数つける場合は,(カンマ)で区切ってください。<br>
+        <%= f.label :"about" %><br>
         <%= f.text_area :about, :size => "50x10"  %><br>
-        <%= f.label :"tent" %>
+        <%= f.label :"tent" %><br>
         <%= f.text_field :tent, :size =>  "50x10" %><br>
-        <%= f.label :"sleeping tool" %>
+        <%= f.label :"sleeping tool" %><br>
         <%= f.text_field :sleep, :size =>  "50x10" %><br>
-        <%= f.label :"lanthanum" %>
+        <%= f.label :"lanthanum" %><br>
         <%= f.text_field :lantan, :size =>  "50x10" %><br>
-        <%= f.label :"cooking tool" %>
+        <%= f.label :"cooking tool" %><br>
         <%= f.text_field :cook, :size =>  "50x10" %><br>
-        <%= f.label :other %>
-        <%= f.text_field :other, :size =>  "50x10" %><br>
-        <%= f.label :"advice" %>
-        <%= f.text_area :advice, :size => "50x10"  %>
+        <%= f.label :other %><br>
+        <%= f.text_area :other, :size =>  "50x10" %><br>
+        <%= f.label :"advice" %><br>
+        <%= f.text_area :advice, :size => "50x10"  %><br><br>
+        <%= f.submit "投稿" %>
+        <% end %>
     </div>
-
-    <%= f.submit "投稿" %>
-<% end %>
+</div>

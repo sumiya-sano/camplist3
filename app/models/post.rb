@@ -1,8 +1,6 @@
 class Post < ApplicationRecord
 
-    [:title,
-        #  :tent, :sleep, :lantan, :cook, :other, :advice, :number, :price, :about, :image, :tag_list
-        ].each do |v|
+    [:title, :image, :number, :price, :tent, :sleep, :lantan, :cook, :other, :about ].each do |v|
         validates v, presence: true
     end
 

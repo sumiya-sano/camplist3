@@ -1,0 +1,125 @@
+.users-show {
+    color: cornsilk;
+
+    h2{
+        font-family: "CooperFiveOpti-Black";
+        margin-left: 50px;
+    }
+
+    a{
+        color: cornsilk;
+    }
+
+    button{
+        color: cornsilk;
+        background-image: url(joshua-bartell-6vvIBTvL90A-unsplash.jpg);
+        background-size: 100% auto;
+        margin: 0 0 10px 10px;
+    }
+
+    .profile {
+        background-image: url(joshua-bartell-6vvIBTvL90A-unsplash.jpg);
+        background-size: 100% auto;
+        width: 820px;
+        margin-left: 50px;
+        padding: 10px;
+        border: cornsilk 2px solid;
+        border-radius: .50rem;
+
+        .btn-primary{
+            border-color: cornsilk;
+            box-shadow: 0 0 0 0 cornsilk!important;
+        }
+
+        .follower{
+            margin-right: 480px;
+        }
+
+        .modal {
+            z-index: 9999;
+
+            .modal-header,
+            .modal-body,
+            .modal-footer {
+                background-image: url(joshua-bartell-6vvIBTvL90A-unsplash.jpg);
+                background-size: 100% auto;
+            }
+        }
+
+        .bi-brush {
+            background-image: url(joshua-bartell-6vvIBTvL90A-unsplash.jpg);
+            background-size: 100% auto;
+            margin: 10px 0px;
+            height: 30px;
+            width: 30px;
+            border: solid cornsilk 2px;
+            border-radius: 5px;
+        }
+
+        .logout {
+            background-image: url(joshua-bartell-6vvIBTvL90A-unsplash.jpg);
+            background-size: 100% auto;
+            width: 60px;
+            height: 20px;
+            margin: 10px;
+            padding: 5px;
+            border: solid cornsilk 2px;
+            border-radius: 5px;
+        }
+    }
+
+    .container {
+        max-width: 100%;
+        .row {
+            margin: 10px;
+
+            .post {
+                margin: 30px;
+
+                .card {
+                    color: cornsilk !important;
+                    text-shadow: 2px 2px 10px #777,
+                        -2px 2px 10px #777,
+                        2px -2px 10px #777,
+                        -2px -2px 10px #777;
+
+                    .card-img {
+                        height: 400px;
+                        width: 400px;
+                        object-fit: cover;
+                        border: 5px cornsilk inset;
+                        border-radius: 30px;
+                        box-shadow: 0 0 0 3px cornsilk;
+                    }
+                }
+
+                .post-container {
+                    margin-left: 20px;
+
+                    .fa-heart {
+                        height: 25px;
+                        width: 25px;
+                        color: cornsilk;
+                    }
+
+                    .bi-three-dots {
+                        background-image: url(joshua-bartell-6vvIBTvL90A-unsplash.jpg);
+                        background-size: 100% auto;
+                        height: 22px;
+                        width: 32px;
+                        margin-left: 30px;
+                        border: 1.8px cornsilk inset;
+                        border-radius: 20px;
+                    }
+                }
+            }
+        }
+        .pagination a {
+            color: cornsilk;
+        }
+    
+        .pagination {
+            color: brown;
+        }
+    }
+}

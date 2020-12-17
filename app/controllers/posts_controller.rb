@@ -7,12 +7,12 @@ class PostsController < ApplicationController
     def index
         posts = Post.includes(:liked_users).sort {|a,b| b.liked_users.size <=> a.liked_users.size}
         if params[:search] == nil
-            @posts= Kaminari.paginate_array(posts).page(params[:page]).per(3)
+            @posts= Kaminari.paginate_array(posts).page(params[:page]).per(12)
           elsif params[:search] == ''
-            @posts= Kaminari.paginate_array(posts).page(params[:page]).per(3)
+            @posts= Kaminari.paginate_array(posts).page(params[:page]).per(12)
           else
             @posted = Post.tagged_with(params[:search], :wild => true, :any => true).includes(:liked_users).sort {|a,b| b.liked_users.size <=> a.liked_users.size}
-            @posts= Kaminari.paginate_array(@posted).page(params[:page]).per(3)
+            @posts= Kaminari.paginate_array(@posted).page(params[:page]).per(12)
         end
     end
 

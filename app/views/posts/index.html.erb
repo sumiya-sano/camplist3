@@ -1,40 +1,58 @@
-<h3>post一覧</h3>
-
-<h3>タグ検索</h3>
- <%= form_tag({controller:"posts",action:"index"}, method: :get) do %>
-   <%= text_field_tag :search %>
-   <%= submit_tag '検索する'  %>
-<% end %>
-
-<br>
-
-<div class="posts-container">
-    <% @posts.each do |p| %>
-        <div class = "post">
-            <%= image_tag p.image_url, class:"post-image" if p.image? %>
-                <%= p.title %>
-                <a href="/users/<%= p.user.id %>"><%= p.user.name %></a>
-                <% p.tag_list.each do |tag| %>
-  　                <span style="background-color: #e9e9e9; border-radius: 5px;"><%= tag %></span>
-　              <% end %>
-
-              <% if current_user.already_liked?(p) %>
-                <%= link_to post_like_path(id: p.id, post_id: p.id), method: :delete do %>
-                    <i class="fas fa-heart"></i><%= p.likes.count %>
-                <% end %>
-              <% else %>
-                <%= link_to post_likes_path(id: p.id, post_id: p.id), method: :post do %>
-                    <i class="far fa-heart"></i><%= p.likes.count %>
-                <% end %>
-              <% end %>
-
-            <%= link_to "see more", post_path(p.id) %>
-            <% if user_signed_in? && current_user.id == p.user_id %>
-                <%= link_to "edit", edit_post_path(p.id) %>
-                <%= button_to "delete", post_path(p.id), method: :delete %>
-            <% end %> 
-        </div>
+<div class="index">
+  <div class="search">
+    <h3>タグ検索</h3>
+    <%= form_tag({controller:"posts",action:"index"}, method: :get) do %>
+    <%= text_field_tag :search %>
+    <%= button_tag(type: "submit", class: "search-btn") do %>
+    <svg width="1.3em" height="1.3em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd"
+        d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
+      <path fill-rule="evenodd"
+        d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+    </svg>
     <% end %>
+    <% end %>
+  </div>
+  <br>
+  <div class="container">
+    <div class="row">
+      <% @posts.each do |p| %>
+      <div class="post">
+        <div class="card bg-dark text-white">
+          <%= image_tag p.image_url, class:"card-img" %>
+          <div class="card-img-overlay">
+            <h5 class="card-title"><%= p.title %></h5>
+            <p class="card-text"><%= p.number %>人　　　<%= p.price %>yen</p>
+            <p class="card-text"><%= p.about %></p>
+            <p class="card-text"><a href="/users/<%= p.user.id %>"><%= p.user.name %></a></p>
+            <p class="card-text"><% p.tag_list.each do |tag| %>
+              <span style="border-radius: 5px;">#<%= tag %></span>
+              　 <% end %></p>
+          </div>
+        </div>
+        <br>
+        <div class="post-container">
+          <% if current_user.already_liked?(p) %>
+          <%= link_to post_like_path(id: p.id, post_id: p.id), method: :delete do %>
+          <i class="fas fa-heart"></i><%= p.likes.count %>
+          <% end %>
+          <% else %>
+          <%= link_to post_likes_path(id: p.id, post_id: p.id), method: :post do %>
+          <i class="far fa-heart"></i><%= p.likes.count %>
+          <% end %>
+          <% end %>
+          <%= link_to post_path(p.id) do %>
+          <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-three-dots" fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+              d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
+          </svg>
+          <% end %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <%= paginate @posts %>
+  </div>
 </div>
-
- <%= paginate @posts %>

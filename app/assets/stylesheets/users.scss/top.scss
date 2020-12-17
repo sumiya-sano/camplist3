@@ -1,0 +1,62 @@
+.top {
+    font-family: "CooperFiveOpti-Black";
+    color: cornsilk;
+    margin: 20px 50px 0 50px;
+    padding-bottom: 3px;
+
+    .card{
+        background-color: transparent;
+        .card-img {
+            height: 100%;
+        }
+    }
+
+    .two-modals {
+        button {
+            background-image: url(joshua-bartell-6vvIBTvL90A-unsplash.jpg);
+            background-size: contain;
+            box-shadow: 0 0 0 0 cornsilk !important;
+            color: cornsilk;
+            border: 1px cornsilk solid;
+            border-radius: 10px;
+            margin-right: 20px;
+            padding: 5px 10px;
+        }
+
+        .modal {
+            z-index: 9999;
+
+            .modal-header,
+            .modal-body,
+            .modal-footer {
+                background-image: url(joshua-bartell-6vvIBTvL90A-unsplash.jpg);
+                background-size: 100% auto;
+            }
+        }
+
+        .field {
+            background-image: url(joshua-bartell-6vvIBTvL90A-unsplash.jpg);
+            background-size: contain;
+            border: cornsilk solid 1px;
+            border-radius: .50rem;
+            padding: 10px;
+
+            label {
+                border: 1px cornsilk inset;
+                border-radius: 10px;
+                box-shadow: 0 0 0 1px cornsilk;
+                margin-top: 5px;
+                padding: 0px 10px;
+            }
+        }
+
+        a {
+            background-image: url(joshua-bartell-6vvIBTvL90A-unsplash.jpg);
+            background-size: contain;
+            color: cornsilk;
+            border: 1px cornsilk inset;
+            border-radius: 10px;
+            padding: 5px 10px;
+        }
+    }
+}
