@@ -24,7 +24,8 @@ class RelationshipsController < ApplicationController
   end
 
   private
-  def set_user
+  def sheroku open
+    et_user
     @user = User.find(params[:relationship][:follow_id])
   end
 end

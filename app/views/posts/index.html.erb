@@ -20,7 +20,7 @@
       <% @posts.each do |p| %>
       <div class="post">
         <div class="card bg-dark text-white">
-          <%= image_tag p.image_url, class:"card-img" %>
+          <%= image_tag p.image_url, class:"card-img" :cloud_name => cloudname %>
           <div class="card-img-overlay">
             <h5 class="card-title"><%= p.title %></h5>
             <p class="card-text"><%= p.number %>人　　　<%= p.price %>yen</p>
